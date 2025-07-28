@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'go_ride_onboarding_screen3.dart';
+
 class GoRideOnboardingScreen2 extends StatelessWidget {
   const GoRideOnboardingScreen2({super.key});
 
@@ -116,7 +118,8 @@ class GoRideOnboardingScreen2 extends StatelessWidget {
                       Expanded(
                         child: ElevatedButton(
                           onPressed: () {
-                            // Continue to next onboarding screen
+                            // Continue to next onboarding screen\
+                            Navigator.push(context, MaterialPageRoute(builder: (_) => GoRideOnboardingScreen3()));
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0xFF00C853),

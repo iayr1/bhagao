@@ -1,9 +1,8 @@
+import 'package:bhagao/go_ride_welcome_screen.dart';
 import 'package:flutter/material.dart';
 
-import 'go_ride_onboarding_screen2.dart';
-
-class GoRideOnboardingScreen extends StatelessWidget {
-  const GoRideOnboardingScreen({super.key});
+class GoRideOnboardingScreen3 extends StatelessWidget {
+  const GoRideOnboardingScreen3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,19 +12,19 @@ class GoRideOnboardingScreen extends StatelessWidget {
         children: [
           const SizedBox(height: 40),
 
-          // Phone mockup image with map and cars
+          // Top image
           Expanded(
             flex: 6,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Image.asset(
-                'assets/images/phone_mockup.png', // Your full image path
+                'assets/images/phone_mockup_3.png', // Make sure to add this image
                 fit: BoxFit.contain,
               ),
             ),
           ),
 
-          // Bottom container with text and buttons
+          // Bottom content area
           Expanded(
             flex: 4,
             child: Container(
@@ -41,7 +40,7 @@ class GoRideOnboardingScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Text(
-                    'Welcome to GoRide - Your Journey, Your Way',
+                    'Secure Payments &\nSeamless Transactions',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 22,
@@ -51,7 +50,7 @@ class GoRideOnboardingScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   const Text(
-                    "Get ready to experience hassle-free transportation. We've got everything you need to travel with ease. Let's get started!",
+                    'Say hello to convenience payments. Pay for your rides securely using GoRide Wallet, PayPal, Google Pay, Apple Pay, card, and or cash.',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.white70,
@@ -65,6 +64,24 @@ class GoRideOnboardingScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
+                        width: 6,
+                        height: 6,
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                      Container(
+                        width: 6,
+                        height: 6,
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          shape: BoxShape.circle,
+                        ),
+                      ),
+                      const SizedBox(width: 6),
+                      Container(
                         width: 24,
                         height: 6,
                         decoration: BoxDecoration(
@@ -72,67 +89,33 @@ class GoRideOnboardingScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(3),
                         ),
                       ),
-                      const SizedBox(width: 6),
-                      Container(
-                        width: 6,
-                        height: 6,
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          shape: BoxShape.circle,
-                        ),
-                      ),
-                      const SizedBox(width: 6),
-                      Container(
-                        width: 6,
-                        height: 6,
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          shape: BoxShape.circle,
-                        ),
-                      ),
                     ],
                   ),
                   const Spacer(),
 
-                  // Skip and Continue buttons
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: OutlinedButton(
-                          onPressed: () {
-                            // Handle skip
-                          },
-                          style: OutlinedButton.styleFrom(
-                            side: const BorderSide(color: Colors.grey),
-                            foregroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(vertical: 14),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                          ),
-                          child: const Text('Skip'),
+                  // "Let's Get Started" Button
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Navigate to main screen or login
+                        Navigator.push(context, MaterialPageRoute(builder: (_) => GoRideWelcomeScreen()));
+
+
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFF00C853),
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
                         ),
                       ),
-                      const SizedBox(width: 16),
-                      Expanded(
-                        child: ElevatedButton(
-                          onPressed: () {
-                            // Handle continue
-                            Navigator.push(context, MaterialPageRoute(builder: (_) => GoRideOnboardingScreen2()));
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xFF00C853),
-                            foregroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(vertical: 14),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                          ),
-                          child: const Text('Continue'),
-                        ),
+                      child: const Text(
+                        "Let's Get Started",
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
-                    ],
+                    ),
                   ),
                 ],
               ),
